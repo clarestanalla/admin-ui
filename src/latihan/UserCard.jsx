@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
 function UserCard(props) {
     const {name, email, street, city, ...rest } = props;
@@ -37,4 +37,4 @@ function UserCard(props) {
   ); 
 }
 
-export default UserCard
+export default UserCard;
