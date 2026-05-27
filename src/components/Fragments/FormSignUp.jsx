@@ -4,13 +4,26 @@ import CheckBox from '../Elements/CheckBox';
 import Button from '../Elements/Button';
 import { Link } from "react-router-dom";
 
-function FormSignIn() {
+function FormSignUp() {
   return (
     <>
         {/* form start */}
+        <br></br>
+        <h2 className="text-2xl font-semibold text-center mb-8">
+            Create an account
+        </h2>
 
         <div className = "mt-16">
           <form action="">
+            <div className = "mb-6">
+                <LabeledInput 
+                    label="Name"
+                    id="name"
+                    type="name"
+                    placeholder="name"
+                    name="name"
+                />
+            </div>
             <div className = "mb-6">
                 <LabeledInput 
                     label="Email Address"
@@ -29,15 +42,13 @@ function FormSignIn() {
                     name="password"
                 />
             </div>
-            <div>
-            <CheckBox
-                label="Keep me signed in"
-                id="status"
-                type="checkbox"
-                name="status"
-                />
-            </div>
-                <Button> Sign In</Button>
+            <div className="mb-6 text-xs text-gray-400">
+                By continuing, you agree to our{" "}
+                <a className="text-teal-500 hover:underline cursor-pointer">
+                    terms of service
+                </a>
+                </div>
+                <Button> Sign Up</Button>
           </form>
         </div>
 
@@ -83,14 +94,14 @@ function FormSignIn() {
             </div>
         {/* sign in with google end */}
 
-        <div className="flex justify-center">
-            <Link to="/register" className="text-primary text-sm font-bold">
-            Create an account
+        <div className="text-center mt-6 text-sm">
+            Already have an account?{" "}
+            <Link to="/login" className="text-primary text-sm font-bold">
+            Sign In Here
             </Link>
         </div>
-
     </>
   );
 }
 
-export default FormSignIn;
+export default FormSignUp;
