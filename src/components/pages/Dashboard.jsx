@@ -7,7 +7,14 @@ import CardExpenseBreakdown from '../Fragments/CardExpenseBeakdown';
 import CardRecentTransaction from '../Fragments/CardRecentTransaction';
 import CardStatistic from '../Fragments/CardStatistic';
 import CardUpcomingBill from '../Fragments/CardUpcomingBill';
-import { transactions, bills, expensesBreakdowns } from '../../Data';
+import { 
+  transactions, 
+  bills, 
+  expensesBreakdowns,
+  balances,
+  goals,
+  expensesStatistics,
+} from '../../Data';
 
 function Dashboard() {
   return (
@@ -15,10 +22,10 @@ function Dashboard() {
       <MainLayout>
         <div className="grid sm:grid-cols-12 sm:grid-rows-3 gap-6">
           <div className="sm:col-span-4">
-            <CardBalance />
+            <CardBalance data={balances}/>
           </div>
           <div className="sm:col-span-4">
-            <CardGoal />
+            <CardGoal data={goals}/>
           </div>
           <div className="sm:col-span-4">
             <CardUpcomingBill data={bills}/>
@@ -27,7 +34,7 @@ function Dashboard() {
             <CardRecentTransaction data={transactions} />
           </div>
           <div className="sm:col-span-8">
-            <CardStatistic />
+            <CardStatistic data={expensesStatistics}/>
           </div>
           <div className="sm:col-span-8">
             <CardExpenseBreakdown data={expensesBreakdowns}/>
