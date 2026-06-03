@@ -3,7 +3,7 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Error from "./components/pages/Error";
 import Dashboard from "./components/pages/Dashboard";
-import Balance from "./components/Elements/balance";
+import Balance from "./components/Elements/Balance";
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 
 
