@@ -3,8 +3,9 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Error from "./components/pages/Error";
 import Dashboard from "./components/pages/Dashboard";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Balance from "./components/Elements/balance";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+
 
 function App() {
   const myRouter = createBrowserRouter([
@@ -14,12 +15,16 @@ function App() {
       errorElement: <Error />, 
     },
     {
-      path: "login",
+      path: "/login",
       element: <SignIn/>,
     },
     {
-      path: "register",
+      path: "/register",
       element: <SignUp/>,
+    },
+    {
+      path: "/balance",
+      element: <Balance/>,
     },
   ]);
 
