@@ -1,49 +1,36 @@
 import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
 import Card from '../Elements/Card';
+import CardBalance from '../Fragments/CardBalance';
+import CardGoal from '../Fragments/CardGoal';
+import CardExpenseBreakdown from '../Fragments/CardExpenseBeakdown';
+import CardRecentTransaction from '../Fragments/CardRecentTransaction';
+import CardStatistic from '../Fragments/CardStatistic';
+import CardUpcomingBill from '../Fragments/CardUpcomingBill';
+import { transactions, bills, expensesBreakdowns } from '../../Data';
 
 function Dashboard() {
   return (
     <>
-        			<MainLayout>
+      <MainLayout>
         <div className="grid sm:grid-cols-12 sm:grid-rows-3 gap-6">
           <div className="sm:col-span-4">
-            <Card
-              title="Total Balance"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+            <CardBalance />
           </div>
           <div className="sm:col-span-4">
-            <Card
-              title="Goals"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+            <CardGoal />
           </div>
           <div className="sm:col-span-4">
-            <Card
-              title="Upcoming Bill"
-              link="/bill"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+            <CardUpcomingBill data={bills}/>
           </div>
-          					<div className="sm:col-span-4 sm:row-span-2">
-            <Card
-              title="Recent Transactions"
-              link="/transactions"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+          <div className="sm:col-span-4 sm:row-span-2">
+            <CardRecentTransaction data={transactions} />
           </div>
           <div className="sm:col-span-8">
-            <Card
-              title="Statistics"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+            <CardStatistic />
           </div>
           <div className="sm:col-span-8">
-            <Card
-              title="Expenses Breakdown"
-              desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!"
-            />
+            <CardExpenseBreakdown data={expensesBreakdowns}/>
           </div>
         </div>
       </MainLayout>
