@@ -4,11 +4,12 @@ import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { ThemeContext } from "../../context/themeContext";
 
 export default function DotsMobileStepper(props) {
   const { data } = props;
+  const { theme, themeMode } = React.useContext(ThemeContext);
 
-  const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
@@ -30,11 +31,9 @@ export default function DotsMobileStepper(props) {
         sx={{
           maxWidth: "400",
           flexGrow: 1,
-          "& .MuiMobileStepper-dot": { 
-	          backgroundColor: "darkgray" 
-	        },
-          "& .MuiMobileStepper-dotActive": {
-            backgroundColor: "#299D91",
+          "& .MuiMobileStepper-dot": { backgroundColor: "darkgray" },
+          "& .MuiMobileStepper-dotActive": { 
+            backgroundColor: theme.color,
           },
         }}
         nextButton={
