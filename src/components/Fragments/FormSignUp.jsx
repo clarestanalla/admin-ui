@@ -66,7 +66,7 @@ function FormSignUp() {
                     <span className="flex items-center justify-center">
                             <svg
                             className="h-6 w-6 mr-2"
-                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/2000/svg"
                             width="800"
                             height="800"
                             viewBox="-0.5 0 48 48"
